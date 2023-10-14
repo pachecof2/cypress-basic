@@ -24,7 +24,12 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents,
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "https://www.saucedemo.com",
+    //specPattern: "cypress/integration/*.*.js",
+    baseUrl: "https://practice.automationtesting.in",
+    //baseUrl: "https://www.saucedemo.com",
+    projectId: "CYPRESS_ID_KEY",
+    //viewportWidth: 1920,
+    //viewportHeight: 1280,
     chromeWebSecurity: false,
     env: {
       allureReuseAfterSpec: true,

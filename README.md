@@ -1,5 +1,22 @@
 Fork para Academy 2023-2S - Basic Automation Testing
 
+# Comandos Utiles
+ npm init
+ 
+ npm install cypress --save-dev
+ 
+ npm install cypress-donwloadfile
+ 
+ Run Cypress:  .\node_modules\.bin\cypress open
+
+Comando optativo: npx cypress open              
+
+Ante dificultades ejecutar en modo Administrador:
+ - Para CMD: ".\node_modules\.bin\cypress.cmd install --force"
+ - Para Bash: " .\\node_modules\\.bin\\cypress.cmd install --force"
+
+ Después ya podrán correr "npm run cy:open"
+
 # cypress-cucumber-boilerplate-for-e2e-testing
 
 <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQF1dg2KtKFdPg/company-logo_200_200/0/1626295436859?e=2159024400&v=beta&t=Ib_T9PXXQxkHRKnj3Oe65EKuR6EAh01IgAA6IGvU0FY" alt="exemplo imagem">

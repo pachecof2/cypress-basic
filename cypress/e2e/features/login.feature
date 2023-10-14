@@ -1,11 +1,13 @@
-Feature: 01 - Crowdar Academy 2022 - Login
-
+Feature: 01 - Crowdar Academy 2023 - Login
+  @login
   Scenario: Login como admin
     Given  Me logueo como admin correctamente
-
+  
+  @login
   Scenario: Login como usuario normal
     Given  Me logueo como usuario correctamente
-
+  
+  @login
   Scenario Outline: Login usuario - Escenario Outline 
     Given Navego al sitio automationtesting
     When Me logueo como usuario con user '<user>' y pass '<pass>' 
@@ -13,4 +15,4 @@ Feature: 01 - Crowdar Academy 2022 - Login
 
         Examples:
           | user                                            |   pass                |
-          | academyCypress_usuarioNormal@crowdaronline.com  |   Crowdar.2022!       |
+          | academyCypress_usuarioNormal@crowdaronline.com  |   Crowdar.2023!       |

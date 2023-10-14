@@ -4,7 +4,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 });
 /// <reference types="cypress" />
-import LoginLocators from '../../fixtures/locators/LoginLocators.json';
+import LoginLocators from './locators/LoginLocators.json'
+
 class LoginPage{
 
     visitarPagina = () => { 

@@ -1,4 +1,8 @@
 {
+    "inpUsernameLogin": "#username",
+    "inpPassLogin": "#password",
+    "btnIniciarSesionLogin": ":nth-child(3) > .woocommerce-Button",
+    "btnGoToShop" : "#menu-item-40 > a",
     "shopBradcrum" : ".woocommerce-breadcrumb",
     "priceSlider" : ".price_slider",
     "priceSliderMin" : ".price_slider > span:nth-of-type(2)",

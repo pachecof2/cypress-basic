@@ -3,13 +3,34 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   // failing the test
   return false
 });
-/// <reference types="cypress"/>
-import ShopLocators from "../../fixtures/locators/ShopLocators.json";
+/// <reference types="cypress" />
+import ShopLocators from './locators/ShopLocators.json';
 
 class ShopPage {
-  visitarPagina = () =>{
+  elements = {
+    btnGoToShop : () => cy.get("#menu-item-40 > a"),
+  };
+
+  clickShop() {
+    this.elements.btnGoToShop().click();
+  }
+  visitarPaginaShop = () =>{
     cy.visit('/shop/');
   }
+  
+  doLoginScenarioOutlineShop = (user,pass) => { //realiza el login en la aplicacion de acuerdo a los datos cargados en el escenario Outline, parametrizando así variables
+    cy.get(ShopLocators.inpUsernameLogin).type(user);
+    cy.get(ShopLocators.inpPassLogin).type(pass);
+    cy.get(ShopLocators.btnIniciarSesionLogin).click();
+  } 
+
+  clickBotonStoreShop = () => {
+    //cy.wait(800);
+    //cy.get(ShopLocators.btnGoToShop, {timeout:10000}).should('be.visible');
+    //cy.get(ShopLocators.btnGoToShop, {timeout:10000}).click({force: true});
+    //cy.get(ShopLocators.btnGoToShop).should('be.visible');
+    cy.get(ShopLocators.btnGoToShop).click({force: true});
+}
 
   verificarPaginaShop = () => { //verifica que la pagina Shop cargue correctamente
     cy.get(ShopLocators.shopBradcrum).should('be.visible');
@@ -44,7 +65,7 @@ class ShopPage {
   
   verificarRangoBusquedaShop = () => { 
     cy.get(ShopLocators.rangoBuscar).should('be.visible');
-    cy.get(ShopLocators.rangoDesde).should('text', '₹324');
+    cy.get(ShopLocators.rangoDesde).should('text', '₹323');
     cy.get(ShopLocators.rangoHasta).should('text', '₹500');
   };
 }

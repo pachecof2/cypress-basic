@@ -4,6 +4,12 @@
         "paths": {
             "@pages/*": [
                 "./cypress/pages/*"
+            ],
+            "@locators/*": [
+                "./locators/*"
+            ],
+            "@examples/*": [
+                "./examples/*"
             ]
         }
     }
