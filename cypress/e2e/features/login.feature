@@ -1,22 +1,16 @@
-Feature: Login page
+Feature: 01 - Crowdar Academy 2022 - Login
 
-    Feature Login page will work depending on the user credentials.
+  Scenario: Login como admin
+    Given  Me logueo como admin correctamente
 
-    Background:
-        Given A web browser is at the saucelabs login page
-    Scenario: Success Login
-        When A user enters the username "standard_user", the password "secret_sauce", and clicks on the login button
-        Then the url will contains the inventory subdirectory
-    Scenario: Blocked Login
-        When A user enters the username "locked_out_user", the password "secret_sauce", and clicks on the login button
-        Then The error message "Epic sadface: Sorry, this user has been locked out." is displayed
-    Scenario: Incorrect Username Login
-        When A user provides incorrect credentials, and clicks on the login button
-            | username | password     |
-            | testName | secret_sauce |
-        Then The error message "Epic sadface: Username and password do not match any user in this service" is displayed
-    Scenario: Incorrect Password Login
-        When A user provides incorrect credentials, and clicks on the login button
-            | username      | password     |
-            | standard_user | testPassword |
-        Then The error message "Epic sadface: Username and password do not match any user in this service" is displayed
+  Scenario: Login como usuario normal
+    Given  Me logueo como usuario correctamente
+
+  Scenario Outline: Login usuario - Escenario Outline 
+    Given Navego al sitio automationtesting
+    When Me logueo como usuario con user '<user>' y pass '<pass>' 
+    Then Valido saludo de bienvenida en el Título
+
+        Examples:
+          | user                                            |   pass                |
+          | academyCypress_usuarioNormal@crowdaronline.com  |   Crowdar.2022!       |

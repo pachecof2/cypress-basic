@@ -1,28 +1,31 @@
-class LoginPage {
-  elements = {
-    usernameInput: () => cy.get("#user-name"),
-    passwordInput: () => cy.get("#password"),
-    loginBtn: () => cy.get("#login-button"),
-    errorMessage: () => cy.get('h3[data-test="error"]'),
-  };
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+});
+/// <reference types="cypress" />
+import LoginLocators from '../../fixtures/locators/LoginLocators.json';
+class LoginPage{
 
-  typeUsername(username) {
-    this.elements.usernameInput().type(username);
-  }
+    visitarPagina = () => { 
+        cy.visit('/my-account/');
+    };
 
-  typePassword(password) {
-    this.elements.passwordInput().type(password);
-  }
-
-  clickLogin() {
-    this.elements.loginBtn().click();
-  }
-
-  submitLogin(username,password){
-    this.elements.usernameInput().type(username);
-    this.elements.passwordInput().type(password);
-    this.elements.loginBtn().click();
-  }
+    doLoginAdmin = (json) => { //realiza el login en la aplicacion de acuerdo a los datos cargados en el archivo "LoginAdminExample.json"
+    cy.get(LoginLocators.inpUsernameLogin).type(json.username);
+    cy.get(LoginLocators.inpPassLogin).type(json.pass);
+    cy.get(LoginLocators.btnIniciarSesionLogin).click();
+};
+    doLogin = (json) => { //realiza el login en la aplicacion de acuerdo a los datos cargados en el archivo "LoginExample.json"
+    cy.get(LoginLocators.inpUsernameLogin).type(json.username);
+    cy.get(LoginLocators.inpPassLogin).type(json.pass);
+    cy.get(LoginLocators.btnIniciarSesionLogin).click();
+};
+    doLoginScenarioOutline = (user,pass) => { //realiza el login en la aplicacion de acuerdo a los datos cargados en el escenario Outline, parametrizando así variables
+    cy.get(LoginLocators.inpUsernameLogin).type(user);
+    cy.get(LoginLocators.inpPassLogin).type(pass);
+    cy.get(LoginLocators.btnIniciarSesionLogin).click();
+};
 }
 
-export const loginPage = new LoginPage();
+export default new LoginPage(); 
