@@ -1,4 +1,4 @@
-Feature: 01 - Crowdar Academy 2023 - Login
+Feature: 01 - Crowdar Academy 2024 - Login
   @login
   Scenario: Login como admin
     Given  Me logueo como admin correctamente
@@ -9,10 +9,10 @@ Feature: 01 - Crowdar Academy 2023 - Login
   
   @login
   Scenario Outline: Login usuario - Escenario Outline 
-    Given Navego al sitio automationtesting
+    Given Navego al sitio App Clockify Me
     When Me logueo como usuario con user '<user>' y pass '<pass>' 
     Then Valido saludo de bienvenida en el Título
 
         Examples:
           | user                                            |   pass                |
-          | academyCypress_usuarioNormal@crowdaronline.com  |   Crowdar.2023!       |
+          | yafin69474@adstam.com                           |   Crowdar2024!        |

@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/JuanAndresTrejo/academy2023-cypress-basic.git"
+    "url": "git+https://github.com/JuanAndresTrejo/academy2024-cypress-basic.git"
   },
   "author": "cucumber",
   "license": "ISC",
@@ -30,8 +30,12 @@
     "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "@shelex/cypress-allure-plugin": "^2.34.0",
-    "cypress": "^13.3.1",
+    "cypress": "^13.7.2",
     "esbuild": "^0.16.4",
     "multiple-cucumber-html-reporter": "^3.0.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/JuanAndresTrejo/academy2024-cypress-basic/issues"
+  },
+  "homepage": "https://github.com/JuanAndresTrejo/academy2024-cypress-basic#readme"
 }
