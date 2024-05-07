@@ -31,17 +31,45 @@ class TimeEntryPage {
     cy.get(EntryLocators.btnAgregarProyectoNuevo).click();
 
     cy.get(EntryLocators.inpProyecto).click({force: true});
-    cy.get('[data-cy="project-name"]').type('Automation Cypress Project Demo');
+
+    // Ejemplo Input Simple
+    // cy.get('[data-cy="project-name"]').type('Automation Cypress Project Demo');
+
+    // Generar una cadena aleatoria de 4 caracteres
+    const randomString = Math.random().toString(36).substring(2, 6);
+
+    // Texto base
+    const textoBase = 'Automation Cypress Project Demo';
+
+    // Texto final con la cadena aleatoria
+    const textoFinal = `${textoBase} ${randomString}`;
+
+    // Introducir el texto final en el campo de entrada
+    cy.get('[data-cy="project-name"]').type(textoFinal);
+    
     cy.get('[data-cy="create-project"]').click();
     cy.get('.cl-d-lg-custom-none > .cl-dropdown > .pointer').click();
     cy.get('.cl-no-focus-tabindex > [data-cy="manual-mode"]').click();
     cy.get('.toast-title').should('be.visible');
-    cy.get('.toast-title').should('contain.text', 'Project Automation Cypress Project Demo has been created');
+    cy.get('.toast-title').should('contain.text', 'Project Automation Cypress Project Demo');
   }
 
   agregarProyectoNuevoTimeEntry01 = () => {
     cy.wait(800);
-    cy.get('#undefined').type(' Automation Cypress Demo :: Time Entry 01');
+    // Generar una cadena aleatoria de 4 caracteres
+    const randomStringTitulo = Math.random().toString(36).substring(2, 6);
+
+    // Texto base
+    const textoBase = ' Automation Cypress Demo :: Time Entry 01';
+
+    // Texto final con la cadena aleatoria
+    const textoFinal = `${textoBase} ${randomStringTitulo}`;
+
+
+    cy.get('#undefined').type(textoFinal);
+    //Ejemplo Input Simple
+    // cy.get('#undefined').type(' Automation Cypress Demo :: Time Entry 01');
+    
     cy.get('.cl-single-date-picker > :nth-child(1) > .cl-form-control').clear();
     cy.get('.cl-single-date-picker > :nth-child(1) > .cl-form-control').type('9');
     cy.get('.cl-single-date-picker > :nth-child(3) > .cl-form-control').clear();
@@ -79,8 +107,26 @@ class TimeEntryPage {
     cy.wait(1200);
     cy.get('[data-testid="toggle-select-all"] > .cl-custom-checkbox');
     cy.wait(1200);
+
+    // Obtener la fecha actual
+    const fechaActual = new Date();
+
+    // Obtener el mes y el día
+    const mes = fechaActual.getMonth() + 1; // Los meses comienzan desde 0
+    const día = fechaActual.getDate();
     
-    cy.get('#\\32 024-04-29').check();
+    // Formatear la fecha en el formato necesario
+    const fechaFormateada = `024-${mes.toString().padStart(2, '0')}-${día.toString().padStart(2, '0')}`;
+
+    // Construir el selector utilizando la fecha formateada
+    const selector = `#\\32 ${fechaFormateada}`;
+
+    // Usar el selector construido con la fecha actual
+    cy.get(selector).check();
+    
+    //Ejemplo de locator a construir 
+    //cy.get('#\\32 024-05-06').check();
+    
     cy.get(':nth-child(4) > .cl-color-blue').click();
     cy.get('[data-cy="confirm-delete"]').clear();
     cy.get('[data-cy="confirm-delete"]').type('DELETE');
