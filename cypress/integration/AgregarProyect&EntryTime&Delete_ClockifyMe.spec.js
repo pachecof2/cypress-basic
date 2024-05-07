@@ -7,6 +7,7 @@
 /* ==== Test Created with Cypress Studio ==== */
 it('AgregarProyecto&EntryTime&Delete', function() {
   /* ==== Generated with Cypress Studio ==== */
+  cy.viewport(1024, 768);
   cy.visit('https://app.clockify.me/en/login');
   cy.get('.cl-create-account > .cl-d-block').click();
   cy.get('#email').clear();
@@ -58,15 +59,12 @@ it('AgregarProyecto&EntryTime&Delete', function() {
   cy.get('#cdk-drop-list-2 > :nth-child(1) > .cl-dropdown > .cl-nav-link > .cl-d-flex > .cl-nav-link-copy').click();
   cy.get('.cl-p-lg-2 > .cl-d-flex > .cl-ml-auto > .cl-badge > select-arrow > .ng-star-inserted').click();
   cy.get('.cl-px-1').click();
-  cy.get('.cl-report-entry-actions > [dropdown=""] > .cl-component-divided-left').click();
-  cy.get('[dropdown=""] > .cl-dropdown-menu > :nth-child(3)').click();
-  cy.get('.cl-px-1').click();
-  cy.get('[data-cy="archive-project"]').click();
+  cy.contains('Archive').click({force: true});
   cy.get('app-button.ng-star-inserted > .cl-btn').click();
   cy.wait(1200);
   cy.get('.cl-p-lg-2 > .cl-d-flex > .cl-ml-auto > .cl-badge > select-arrow').click();
   cy.get('.cl-px-1').click();
-  cy.get('[data-cy="delete-project"]').click();
+  cy.contains('Delete').click({force: true});
   cy.get('app-button.ng-star-inserted > .cl-btn').click();
   cy.get('#topbar-menu').click();
   cy.get('.cl-no-image-wrapper-sm > span').click();
