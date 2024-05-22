@@ -1,5 +1,5 @@
 {
-    "logoHome":".top-bar-nav-align > .cl-logo-mob > a > img",
+    "logoHome":":nth-child(2) > .cl-logo-mob > .cl-ml-2",
     "messageEntries":"message-entries",
     "messageHome":".cl-h1"
 }
