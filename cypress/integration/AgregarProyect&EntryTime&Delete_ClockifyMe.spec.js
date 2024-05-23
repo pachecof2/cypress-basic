@@ -51,7 +51,7 @@ it('AgregarProyecto&EntryTime&Delete', function() {
   cy.wait(1200);
   cy.get('#bulkEdit > img').click();
   cy.get('[data-testid="toggle-select-all"] > .cl-custom-checkbox')
-  cy.get('#\\32 024-05-07').check();
+  cy.get('#\\32 024-05-23').check();
   cy.get(':nth-child(4) > .cl-color-blue').click();
   cy.get('[data-cy="confirm-delete"]').clear();
   cy.get('[data-cy="confirm-delete"]').type('DELETE');

@@ -31,6 +31,8 @@ module.exports = defineConfig({
     //viewportWidth: 1920,
     //viewportHeight: 1280,
     chromeWebSecurity: false,
+    experimentalStudio: true,
+    video: true,
     env: {
       allureReuseAfterSpec: true,
     },
