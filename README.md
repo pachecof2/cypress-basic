@@ -1,4 +1,4 @@
-Fork para Academy 2023-2S - Basic Automation Testing
+Fork para Academy 2024-2S - Basic Automation Testing
 
 # Comandos Utiles
  npm init
@@ -16,6 +16,20 @@ Ante dificultades ejecutar en modo Administrador:
  - Para Bash: " .\\node_modules\\.bin\\cypress.cmd install --force"
 
  Después ya podrán correr "npm run cy:open"
+
+
+ - Error de Cypress cache
+    
+    **Borrar variables de entorno PROXY**
+    
+    - **Borrar configuración de PROXY del proyecto:** Desde el proyecto correr el sig comando → *npm config list Acá aparecerá una lista:* **Borrar de la lista el https y el proxy** con los siguientes comandos → *npm config rm https-proxy → npm config rm proxy*
+    - Luego borrar node_modules
+    - npm cache clean --force
+    - npm config set registry https://registry.yarnpkg.com
+    - Correr → *npm install*
+    - Instalar Cypress →*npm install cypress --save-dev*
+    Correr proyecto → (Acá debe levantar el proyecto correctamente)
+    - Listo! 🤙🏼
 
 # cypress-cucumber-boilerplate-for-e2e-testing
 
