@@ -21,8 +21,6 @@ class LoginPage {
   submitLogin(username,password){
     this.elements.usernameInput().type(username);
     this.elements.passwordInput().type(password);
-    this.elements.loginBtn().click();
-  }
 }
-
+}
 export const loginPage = new LoginPage();

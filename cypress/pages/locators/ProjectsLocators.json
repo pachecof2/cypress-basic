@@ -1,0 +1,6 @@
+{
+    "menuProject": ".cl-component-divided-left > .cl-d-flex > img",
+    "newProjectBtn":"[data-cy='new-project'] > .cl-ml-2",
+    "inputProject": "[data-cy='project-name']",
+    "createBtn":"[data-cy='create-project']"
+}

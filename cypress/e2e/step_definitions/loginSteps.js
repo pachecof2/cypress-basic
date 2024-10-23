@@ -34,9 +34,19 @@ Given('Navego al sitio App Clockify Me', () => {
 When('Me logueo como usuario con user {string} y pass {string}', (user,pass) => {
     LoginPage.doLoginScenarioOutline(user,pass);
 })
-
+When("Presiona el botón 'Log In'", () => {
+    LoginPage.clickLogin();
+});
 Then('Valido saludo de bienvenida en el Título', () => {
     HomePage.verificarHome();     
 })
-
-
+When("Presiona el botón 'Log Out'", () => {
+    LoginPage.logOut();
+});
+Then("El usuario está en la página de inicio de Clockify", function () {
+     cy.url().should("contains", "en/login");
+ });
+Then("Se visualiza alerta {string} exitosamente", function (alert) {
+    LoginPage.errorMessage('have.text', alert);
+});
+     

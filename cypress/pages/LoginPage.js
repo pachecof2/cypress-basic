@@ -26,8 +26,16 @@ class LoginPage{
     doLoginScenarioOutline = (user,pass) => { //realiza el login en la aplicacion de acuerdo a los datos cargados en el escenario Outline, parametrizando así variables
     cy.get(LoginLocators.inpUsernameLogin).type(user);
     cy.get(LoginLocators.inpPassLogin).type(pass);
+};
+clickLogin() {
     cy.get(LoginLocators.btnIniciarSesionLogin).click();
 };
+logOut(){
+    cy.get(LoginLocators.profileMenu).click();
+    cy.get(LoginLocators.logOutBtn).click();
+};
+errorMessage() {
+    cy.get(LoginLocators.errorMessage);
 }
-
+}
 export default new LoginPage(); 

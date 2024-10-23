@@ -1,5 +1,9 @@
 {
     "inpUsernameLogin": "#email",
     "inpPassLogin": ".cl-form-group__password-input > #password",
-    "btnIniciarSesionLogin": ":nth-child(2) > .cl-btn"
+    "btnIniciarSesionLogin": ":nth-child(2) > .cl-btn",
+    "profileMenu":".cl-no-image-wrapper-sm",
+    "logOutBtn":"[data-cy='logout']",
+    "errorMessage": "[data-cy='error']"
+
 }

@@ -1,0 +1,13 @@
+{
+    "menuWorkspace": ".cl-rotate-90",
+    "manageWorkspaceBtn": "[routerlink='/workspaces']",
+    "createWorkspaceBtn": ".cl-d-flex > app-button > .cl-btn",
+    "inputWorkspaceName": ".cl-form-control",
+    "createBtn": ".cl-modal-footer .cl-btn",
+    "deleteBtn":".cl-btn-fixed-40",
+    "inputDeleteFrom": ".cl-form-control",
+    "deleteBtnConfirm":".cl-modal-footer > .cl-btn",
+    "settingsButton": ".cl-w-lg-auto > div.ng-star-inserted > app-button > .cl-btn",
+    "inputEditWorkspace": "[data-cy='workspace-name']"
+
+}
